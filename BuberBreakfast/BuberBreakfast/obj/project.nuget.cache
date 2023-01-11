@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "u9uVhZF4yXVkW0eLqBfzyjFqNXYM9x7S2qcQdAKkfOJt1k+Si5YrTXuibKdhzsHfN4UXU/YOz5u+tM6xS43U4A==",
+  "dgSpecHash": "OhjEuKz5GUO9GG3J2iWcnvVKQb2RXWadIZGzu1EG75TV3/O2jYutjfaDrBB3a3d1hZSVIqo66QBx46FCzfAwkg==",
   "success": true,
   "projectFilePath": "/home/santosh/dot_net/BuberBreakfast/BuberBreakfast/BuberBreakfast.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/santosh/.nuget/packages/erroror/1.2.1/erroror.1.2.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -27,3 +27,4 @@
 /home/santosh/dot_net/BuberBreakfast/BuberBreakfast/obj/Debug/net7.0/ref/BuberBreakfast.dll
 /home/santosh/dot_net/BuberBreakfast/BuberBreakfast/bin/Debug/net7.0/BuberBreakfast.Contracts.dll
 /home/santosh/dot_net/BuberBreakfast/BuberBreakfast/bin/Debug/net7.0/BuberBreakfast.Contracts.pdb
+/home/santosh/dot_net/BuberBreakfast/BuberBreakfast/bin/Debug/net7.0/ErrorOr.dll

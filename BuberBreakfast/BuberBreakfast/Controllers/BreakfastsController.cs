@@ -2,13 +2,12 @@ using BuberBreakfast.Contracts.BuberBreakfast;
 using Microsoft.AspNetCore.Mvc;
 using BuberBreakfast.Models;
 using BuberBreakfast.Services.Breakfasts;
+using ErrorOr;
+using BuberBreakfast.Services;
 
 namespace BuberBreakfast.Controllers;
 
-[ApiController]
-[Route("[controller]")]
-
-public class BreakfastsController : ControllerBase
+public class BreakfastsController : ApiController
 {
     private readonly IBreakfastService _breakfastService;
 
@@ -20,7 +19,7 @@ public class BreakfastsController : ControllerBase
     [HttpPost]
     public IActionResult CreateBreakfast(CreateBreakfastRequest request)
     {
-        var breakfast = new Breakfast(
+        var breakfast = Breakfast.Create(
             Guid.NewGuid(),
             request.Name,
             request.Description,
@@ -31,23 +30,11 @@ public class BreakfastsController : ControllerBase
             request.Sweet
         );
         
-        _breakfastService.CreateBreakfast(breakfast);
+        ErrorOr<Created> creatBreakfastResult =_breakfastService.CreateBreakfast(breakfast);
 
-        var response = new BreakfastResponse(
-            breakfast.Id,
-            breakfast.Name,
-            breakfast.Description,
-            breakfast.StartDateTime,
-            breakfast.EndDateTime,
-            breakfast.LastModifiedDateTime,
-            breakfast.Savory,
-            breakfast.Sweet
-            );
-
-        return CreatedAtAction(
-           actionName: nameof(GetBreakfast),
-           routeValues: new {id = breakfast.Id},
-           value: response 
+        return creatBreakfastResult.Match(
+            Created => CreatedAtGetBreakfast(breakfast),
+            errors => Problem(errors)
         );
     }
 
@@ -55,9 +42,18 @@ public class BreakfastsController : ControllerBase
 
     public IActionResult GetBreakfast(Guid id)
     {
-        Breakfast breakfast = _breakfastService.GetBreakfast(id);
+        ErrorOr<Breakfast> getBreakfastResult = _breakfastService.GetBreakfast(id);
 
-        var response = new BreakfastResponse(
+        return getBreakfastResult.Match(
+            breakfast => Ok(MapBreakfastResponse(breakfast)),
+            errors => Problem(errors)
+        );
+
+    }
+
+    private BreakfastResponse MapBreakfastResponse(Breakfast breakfast)
+    {
+        return new BreakfastResponse(
             breakfast.Id,
             breakfast.Name,
             breakfast.Description,
@@ -67,14 +63,13 @@ public class BreakfastsController : ControllerBase
             breakfast.Savory,
             breakfast.Sweet
         );
-        return Ok(response);
     }
 
     [HttpPut("{id:guid}")]
 
     public IActionResult UpsertBreakfast(Guid id,UpsertBreakfastRequest request)
     {
-        var breakfast = new Breakfast(
+        var breakfast = Breakfast.Create(
             id,
             request.Name,
             request.Description,
@@ -84,16 +79,33 @@ public class BreakfastsController : ControllerBase
             request.Savory,
             request.Sweet
         );
-        _breakfastService.UpsertBreakfast(breakfast);
-        return NoContent();
+        ErrorOr<UpsertBreakfast> upsertBreakfastResult =_breakfastService.UpsertBreakfast(breakfast);
+
+        return upsertBreakfastResult.Match(
+            upserted => upserted.IsNewlyCreated? CreatedAtGetBreakfast(breakfast) :NoContent(),
+            errors => Problem(errors)
+        );
+        
     }
 
     [HttpDelete("{id:guid}")]
 
     public IActionResult DeleteBreakfast(Guid id)
     {
-        _breakfastService.DeleteBreakfast(id);
-        return NoContent();
+        ErrorOr<Deleted> deleteBreakfastResult = _breakfastService.DeleteBreakfast(id);
+
+        return deleteBreakfastResult.Match(
+            deleted => NoContent(),
+            errors => Problem(errors)
+        );
+    }
+
+    private CreatedAtActionResult CreatedAtGetBreakfast(Breakfast breakfast)
+    {
+        return CreatedAtAction(
+            actionName: nameof(GetBreakfast),
+            routeValues: new { id = breakfast.Id },
+            value: MapBreakfastResponse(breakfast));
     }
 
 }
