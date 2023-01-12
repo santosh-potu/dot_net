@@ -19,18 +19,21 @@ public class BreakfastsController : ApiController
     [HttpPost]
     public IActionResult CreateBreakfast(CreateBreakfastRequest request)
     {
-        var breakfast = Breakfast.Create(
-            Guid.NewGuid(),
+        ErrorOr<Breakfast>  requestToBreakfastResult = Breakfast.Create(
             request.Name,
             request.Description,
             request.StartDateTime,
             request.EndDateTime,
-            DateTime.UtcNow,
             request.Savory,
             request.Sweet
         );
-        
-        ErrorOr<Created> creatBreakfastResult =_breakfastService.CreateBreakfast(breakfast);
+        if(requestToBreakfastResult.IsError){
+            return Problem(requestToBreakfastResult.Errors);
+        }
+
+        var breakfast = requestToBreakfastResult.Value;
+        ErrorOr<Created> creatBreakfastResult =_breakfastService.
+                            CreateBreakfast(requestToBreakfastResult.Value);
 
         return creatBreakfastResult.Match(
             Created => CreatedAtGetBreakfast(breakfast),
@@ -69,16 +72,19 @@ public class BreakfastsController : ApiController
 
     public IActionResult UpsertBreakfast(Guid id,UpsertBreakfastRequest request)
     {
-        var breakfast = Breakfast.Create(
-            id,
+        ErrorOr<Breakfast> requestToBreakfastResult = Breakfast.Create(
             request.Name,
             request.Description,
             request.StartDateTime,
             request.EndDateTime,
-            DateTime.UtcNow,
             request.Savory,
-            request.Sweet
+            request.Sweet,
+            id
         );
+        if(requestToBreakfastResult.IsError){
+            return Problem(requestToBreakfastResult.Errors);
+        }
+        var breakfast = requestToBreakfastResult.Value;
         ErrorOr<UpsertBreakfast> upsertBreakfastResult =_breakfastService.UpsertBreakfast(breakfast);
 
         return upsertBreakfastResult.Match(
@@ -86,6 +92,11 @@ public class BreakfastsController : ApiController
             errors => Problem(errors)
         );
         
+    }
+
+    private NoContentResult CreatedAtGetBreakfast(ErrorOr<Breakfast> breakfast)
+    {
+        throw new NotImplementedException();
     }
 
     [HttpDelete("{id:guid}")]

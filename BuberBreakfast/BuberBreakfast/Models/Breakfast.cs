@@ -43,9 +43,26 @@ public class Breakfast
         Guid? id = null)
     {
         List<Error> errors = new();
-        if(name.Length < 5 || name.Length > 50){
-            return Errors.Breakfast.InvalidName;
+        if(name.Length < MinNameLength || name.Length > MaxNameLength){
+            errors.Add(Errors.Breakfast.InvalidName);
         }
-        return new Breakfast();
+        if(name.Length < MinDescriptionLength || name.Length > MaxDescriptionLength){
+            errors.Add(Errors.Breakfast.InvalidDescription);
+        }
+        if (errors.Count > 0)
+        {
+            return errors;
+        }
+
+        return new Breakfast(
+            id?? Guid.NewGuid(),
+            name,
+            description,
+            startDateTime,
+            endDateTime,
+            DateTime.UtcNow,
+            savory,
+            sweet);
+
     }
 }
