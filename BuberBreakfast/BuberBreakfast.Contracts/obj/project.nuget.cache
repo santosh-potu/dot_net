@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1/ZWd5vKTGu7WMUq5gzhW/fHE0IMjBs+FEQ1hbY0k6wgdt0yok0YfP+xuwLdhDvwniHmqeKXO02juQmNbA0ghw==",
+  "dgSpecHash": "gPBlwFEiiYYsF40X0j78gCc2Y3xk28pXKkhu9X37k8HZXi5yVoof/8y2MEWfiLGDi4bLuEOkEKS5ghSMmGJYbQ==",
   "success": true,
-  "projectFilePath": "/home/santosh/dot_net/BuberBreakfast/BuberBreakfast.Contracts/BuberBreakfast.Contracts.csproj",
+  "projectFilePath": "D:\\GitHub\\dot_net\\BuberBreakfast\\BuberBreakfast.Contracts\\BuberBreakfast.Contracts.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

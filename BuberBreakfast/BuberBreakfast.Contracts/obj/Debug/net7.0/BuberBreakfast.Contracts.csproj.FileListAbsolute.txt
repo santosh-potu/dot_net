@@ -10,3 +10,15 @@
 /home/santosh/dot_net/BuberBreakfast/BuberBreakfast.Contracts/obj/Debug/net7.0/refint/BuberBreakfast.Contracts.dll
 /home/santosh/dot_net/BuberBreakfast/BuberBreakfast.Contracts/obj/Debug/net7.0/BuberBreakfast.Contracts.pdb
 /home/santosh/dot_net/BuberBreakfast/BuberBreakfast.Contracts/obj/Debug/net7.0/ref/BuberBreakfast.Contracts.dll
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\bin\Debug\net7.0\BuberBreakfast.Contracts.deps.json
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\bin\Debug\net7.0\BuberBreakfast.Contracts.dll
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\bin\Debug\net7.0\BuberBreakfast.Contracts.pdb
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net7.0\BuberBreakfast.Contracts.csproj.AssemblyReference.cache
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net7.0\BuberBreakfast.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net7.0\BuberBreakfast.Contracts.AssemblyInfoInputs.cache
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net7.0\BuberBreakfast.Contracts.AssemblyInfo.cs
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net7.0\BuberBreakfast.Contracts.csproj.CoreCompileInputs.cache
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net7.0\BuberBreakfast.Contracts.dll
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net7.0\refint\BuberBreakfast.Contracts.dll
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net7.0\BuberBreakfast.Contracts.pdb
+D:\GitHub\dot_net\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net7.0\ref\BuberBreakfast.Contracts.dll

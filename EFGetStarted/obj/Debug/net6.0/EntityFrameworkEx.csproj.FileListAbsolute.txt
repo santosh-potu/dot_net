@@ -1,0 +1,15 @@
+D:\GitHub\dot_net\EntityFrameworkEx\bin\Debug\net6.0\EntityFrameworkEx.exe
+D:\GitHub\dot_net\EntityFrameworkEx\bin\Debug\net6.0\EntityFrameworkEx.deps.json
+D:\GitHub\dot_net\EntityFrameworkEx\bin\Debug\net6.0\EntityFrameworkEx.runtimeconfig.json
+D:\GitHub\dot_net\EntityFrameworkEx\bin\Debug\net6.0\EntityFrameworkEx.dll
+D:\GitHub\dot_net\EntityFrameworkEx\bin\Debug\net6.0\EntityFrameworkEx.pdb
+D:\GitHub\dot_net\EntityFrameworkEx\obj\Debug\net6.0\EntityFrameworkEx.csproj.AssemblyReference.cache
+D:\GitHub\dot_net\EntityFrameworkEx\obj\Debug\net6.0\EntityFrameworkEx.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\dot_net\EntityFrameworkEx\obj\Debug\net6.0\EntityFrameworkEx.AssemblyInfoInputs.cache
+D:\GitHub\dot_net\EntityFrameworkEx\obj\Debug\net6.0\EntityFrameworkEx.AssemblyInfo.cs
+D:\GitHub\dot_net\EntityFrameworkEx\obj\Debug\net6.0\EntityFrameworkEx.csproj.CoreCompileInputs.cache
+D:\GitHub\dot_net\EntityFrameworkEx\obj\Debug\net6.0\EntityFrameworkEx.dll
+D:\GitHub\dot_net\EntityFrameworkEx\obj\Debug\net6.0\refint\EntityFrameworkEx.dll
+D:\GitHub\dot_net\EntityFrameworkEx\obj\Debug\net6.0\EntityFrameworkEx.pdb
+D:\GitHub\dot_net\EntityFrameworkEx\obj\Debug\net6.0\EntityFrameworkEx.genruntimeconfig.cache
+D:\GitHub\dot_net\EntityFrameworkEx\obj\Debug\net6.0\ref\EntityFrameworkEx.dll
