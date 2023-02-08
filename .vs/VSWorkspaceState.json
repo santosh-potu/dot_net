@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\EFGetStarted",
+    "\\MvcMovie"
   ],
-  "SelectedNode": "\\EFGetStarted.sln",
+  "SelectedNode": "\\EFGetStarted\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
